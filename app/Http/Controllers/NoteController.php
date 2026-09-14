@@ -101,7 +101,7 @@ class NoteController extends Controller
         ]);
 
         return redirect()
-            ->route('notes.show', ['note' => $note])
+            ->route('note.show', ['note' => $note])
             ->with('success', 'Note Edited Successfully');
     }
 
@@ -117,7 +117,7 @@ class NoteController extends Controller
         $note->delete();
 
         return redirect()
-            ->route('notes.store', ['note' => $note])
+            ->route('note.store', ['note' => $note])
             ->with('success', 'Note moved to trash Successfully');
     }
 }

@@ -79,9 +79,15 @@
 
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
-        <div class="pt-2 pb-3 space-y-1">
+        <div class="flex gap-2">
             <x-responsive-nav-link :href="route('note.index')" :active="request()->routeIs('note.index')">
                 {{ __('Notes') }}
+            </x-responsive-nav-link>
+             <x-responsive-nav-link :href="route('notebooks.index')" :active="request()->routeIs('notebooks.index')">
+                {{ __('NoteBooks') }}
+            </x-responsive-nav-link>
+             <x-responsive-nav-link :href="route('trashed.index')" :active="request()->routeIs('trashed.index')">
+                {{ __('Trash') }}
             </x-responsive-nav-link>
         </div>
 

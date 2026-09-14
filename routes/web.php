@@ -19,7 +19,7 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
-Route::resource('notes', NoteController::class)
+Route::resource('note', NoteController::class)
     ->middleware('auth');
 
 Route::get('/note', [NoteController::class, 'index'])

@@ -36,7 +36,7 @@ class TrashedController extends Controller
         $note->restore();
 
         return redirect()
-            ->route('notes.show', ['note' => $note])
+            ->route('note.show', ['note' => $note])
             ->with('success', 'Note restored Successfully');
     }
 

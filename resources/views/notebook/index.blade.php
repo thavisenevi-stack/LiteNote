@@ -11,7 +11,7 @@
     + New Notebook
     </button>
     
-    <div class="py-12">
+    <div class="p-5 py-12">
     @forelse ( $notebooks as $notebook )
         <div class="mx-auto mb-6 max-w-7xl sm:px-6 lg:px-8">
             <div class="overflow-hidden bg-white shadow-sm sm:rounded-lg">

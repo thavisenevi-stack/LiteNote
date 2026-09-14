@@ -12,8 +12,8 @@
     + New Note
     </button>
    @endif
-
-    <div class="py-12">
+ 
+    <div class="p-5 py-12">
         @forelse ( $notes as $note )
             <div class="mx-auto mb-6 max-w-7xl sm:px-6 lg:px-8">
                     <div class="overflow-hidden bg-white shadow-sm sm:rounded-lg">
@@ -21,7 +21,7 @@
                             <h1 class="text-2xl text-[#4b47d8] font-black mb-2">
                             <a 
                             @if (request()->routeIs('note.index') )
-                            href="{{ route('notes.show', $note) }}"
+                            href="{{ route('note.show', $note) }}"
                             @else
                             href="{{ route('trashed.show', $note) }}"
                             @endif

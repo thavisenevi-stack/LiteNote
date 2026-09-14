@@ -5,9 +5,9 @@
         </h2>
     </x-slot>
 
-     <div class="py-12">
+     <div class="p-5 py-12">
         <div class="mx-auto mb-6 max-w-7xl sm:px-6 lg:px-8">    
-            <form action="{{ route('notes.update', $note) }}" method="POST">
+            <form action="{{ route('note.update', $note) }}" method="POST">
                 @method('put')
                 @csrf
                 

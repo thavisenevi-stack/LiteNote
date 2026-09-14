@@ -5,20 +5,20 @@
         </h2>
     </x-slot>
     
-    <div class="py-12">
-            <div class="mx-auto mb-6 max-w-7xl sm:px-6 lg:px-8">
+    <div class="p-5 py-12">
+            <div>
                 @if( !$note->trashed())
-                <div class="flex justify-between gap-10 my-5">
-                    <div class="flex gap-10">
+                <div class="flex flex-col gap-5 px-4 mx-auto my-5 sm:flex-row sm:items-center sm:justify-between max-w-7xl sm:px-6 lg:px-8">
+                    <div class="flex flex-col gap-2 sm:flex-row sm:gap-10 sm:px-6 lg:px-8" >
                         <p><span class="font-semibold">Created: </span>{{ $note->created_at->diffForHumans() }}</p>
                         <p><span class="font-semibold">Last Changed: </span>{{ $note->updated_at->diffForHumans() }}</p>
                     </div>
                     <div class="flex gap-3">
-                        <x-secondary-button><a href="{{ route('notes.edit', $note) }}">Edit Button</a></x-secondary-button>
-                        <form action="{{ route('notes.destroy', $note) }}" method="POST">
+                        <x-secondary-button class="justify-center w-full sm:w-auto"><a href="{{ route('note.edit', $note) }}">Edit Button</a></x-secondary-button>
+                        <form action="{{ route('note.destroy', $note) }}" method="POST" class="w-full sm:w-auto">
                         @method('delete')
                         @csrf
-                            <button type="submit" class="inline-flex items-center px-4 py-2 text-xs font-semibold tracking-widest text-white uppercase bg-red-700 border border-gray-300 rounded-md shadow-sm hover:bg-red-100 hover:text-red-700"
+                            <button type="submit"  class="inline-flex items-center justify-center w-full px-4 py-2 text-xs font-semibold tracking-widest text-white uppercase bg-red-700 border border-gray-300 rounded-md shadow-sm sm:w-auto hover:bg-red-100 hover:text-red-700"
                             onclick="confirmDelete(event, this.form)">
                                 Move to trash
                             </button>
@@ -27,8 +27,8 @@
                 </div>
 
                 @else
-                <div class="flex justify-between gap-10 my-5">
-                    <div class="flex gap-10">
+                <div class="flex flex-col gap-5 px-4 mx-auto my-5 sm:flex-row sm:items-center sm:justify-between max-w-7xl sm:px-6 lg:px-8">
+                    <div  class="flex flex-col gap-2 sm:flex-row sm:gap-10">
                         <p><span class="font-semibold">Deleted: </span>{{ $note->deleted_at->diffForHumans() }}</p>
                     </div>
                     <div class="flex gap-3">
@@ -52,7 +52,7 @@
                 </div>
                 @endif
                 
-                <div class="overflow-hidden bg-white shadow-sm sm:rounded-lg">
+                <div class="px-4 mx-auto overflow-hidden bg-white shadow-sm sm:rounded-lg max-w-7xl sm:px-6 lg:px-8">
                     <div class="p-6 text-gray-900">     
                         <h1 class="text-2xl text-[#4b47d8] font-black mb-2">
                         {{ $note->title }}
