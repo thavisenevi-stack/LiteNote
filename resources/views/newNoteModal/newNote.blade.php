@@ -12,7 +12,7 @@
         </button>
         
     </div>
-    <form action="{{ route('notes.store')}}" method="POST">
+    <form action="{{ route('note.store')}}" method="POST">
         @csrf
         <x-text-input class="w-full" name="title" placeholder="Note Title" value="{{ @old('title') }}" ></x-text-input>
         @error('title')

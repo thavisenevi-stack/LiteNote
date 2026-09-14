@@ -45,7 +45,7 @@ class NotebookController extends Controller
         ]);
 
         return redirect()
-            ->route('notebook.index')
+            ->route('notebooks.index')
             ->with('success', 'new notebook successfully created');
     }
 

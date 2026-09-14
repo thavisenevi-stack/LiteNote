@@ -22,20 +22,14 @@ require __DIR__.'/auth.php';
 Route::resource('note', NoteController::class)
     ->middleware('auth');
 
-Route::get('/note', [NoteController::class, 'index'])
-    ->name('note.index');
+// Route::get('/note', [NoteController::class, 'index'])
+//     ->name('note.index');
 
-Route::get('/notebook/index', [NotebookController::class, 'index'])
-    ->name('notebook.index');
-
-Route::post('notes/store', [NoteController::class, 'store'])
-    ->name('notes.store');
+// Route::get('/notebook/index', [NotebookController::class, 'index'])
+//     ->name('notebook.index');
 
 Route::resource('/notebooks', NotebookController::class)
     ->middleware('auth');
-
-Route::post('/notebooks/store', [NotebookController::class, 'store'])
-    ->name('notebooks.store');
 
 Route::get('/trashed', [TrashedController::class, 'index'])
     ->name('trashed.index');
