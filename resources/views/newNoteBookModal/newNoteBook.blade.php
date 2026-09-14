@@ -16,7 +16,7 @@
             @csrf
             <x-text-input placeholder="Notebook Name" name='book'></x-text-input>
             <div class="flex justify-between mt-4">
-                <input type="file" name="file" required class="w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
+                <input type="file" name="file" required class="w-full border-gray-300 rounded-md focus:border-indigo-500 focus:ring-indigo-500">
                 <x-primary-button>Save</x-primary-button>
             </div>
         </form>
