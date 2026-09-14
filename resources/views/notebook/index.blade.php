@@ -16,7 +16,12 @@
         <div class="mx-auto mb-6 max-w-7xl sm:px-6 lg:px-8">
             <div class="overflow-hidden bg-white shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">     
-                    <h1 class="text-2xl text-[#4b47d8] font-black mb-2">{{ $notebook->name }}</h1>
+                    <h1 class="mb-2 text-xl font-bold text-black uppercase">{{ $notebook->name }}</h1>   
+                    <h1 class="text-lg text-[#4b47d8] font-mono mb-2 hover:underline">
+                        <a href="{{ asset('storage/' . $notebook->file) }}" target="_blank">
+                            📄 {{ basename($notebook->file) }}
+                        </a>
+                    </h1>
                 </div>
             </div>
         </div>  

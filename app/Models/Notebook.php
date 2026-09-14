@@ -10,7 +10,8 @@ class Notebook extends Model
     protected $table= 'notebooks';
     protected $fillable = [
         'name',
-        'user_id'
+        'user_id',
+        'file'
     ];
 
    public function notes(){

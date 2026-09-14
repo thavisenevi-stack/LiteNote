@@ -35,10 +35,13 @@ class NotebookController extends Controller
         //     'name' => 'required'
         // ]);
 
+        $file = $request->file('file');
+        $filePath = $file->storeAs('notebooks', $file->getClientOriginalName(), 'public');
 
         Notebook::create([
             'user_id' => Auth::id(),
-            'name'=> $request->book
+            'name'=> $request->book,
+            'file'=> $filePath
         ]);
 
         return redirect()

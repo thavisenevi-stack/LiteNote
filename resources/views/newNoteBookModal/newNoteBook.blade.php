@@ -12,10 +12,13 @@
                 </svg>
             </button>
         </div>
-        <form action="{{ route('notebooks.store') }}" method="POST">
+        <form action="{{ route('notebooks.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <x-text-input placeholder="Notebook Name" name='book'></x-text-input>
-            <x-primary-button class="mt-4">Save</x-primary-button>
+            <div class="flex justify-between mt-4">
+                <input type="file" name="file" required class="w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
+                <x-primary-button>Save</x-primary-button>
+            </div>
         </form>
     </div>
     
