@@ -58,7 +58,7 @@
                         {{ $note->title }}
                         </h1>
                         <p class="text-lg break-words">{{ $note->text }}</p>
-                        <p><a href="{{ route('notebooks.index') }}" class="text-lg text-blue-500 underline">{{ $note->notebook->name }}</a></p>
+                        <p><a href="{{ route('notebooks.index') }}" class="text-lg text-blue-500 underline">{{ $note->notebook?->name ?? 'No notebook selected' }}</a></p>
                     </div>
                 </div>
             </div>  
